@@ -1,6 +1,10 @@
+const msg: string = 'Hello World !!!';
 
-//let msg = 'Hello World !!';
+const hero = {
+    name: 'Ironman',
+    age: 45
+}
 
-const msg: string = 'Hello World!!!';
+hero.age = 50;
 
-console.log(msg);
+console.log(hero.age + 1);

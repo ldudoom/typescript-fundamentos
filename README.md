@@ -93,3 +93,43 @@ tsc -w
 
 
 ## Inferir tipos y modo estricto
+
+Es recomendable no dejar que Typescript infiera el tipo de dato de nuestras variables, siempre tratemos de establecer el tipo de dato de cada variable que creemos y que usemos como 
+argumento en nuestras funciones. Para esto, lo primero que vamos a hacer es; En nuestro archivo tsconfig.json vamos a descomentar la línea:
+
+```json
+"noImplicitAny": true,
+```
+
+De esta manera, typescript nos va a obligar a siempre colocar el tipo de dato en nuestras variables:
+
+```typescript
+const a: number = 10;
+let b: string;
+
+function sayHello( msg: string ): string{
+    return "Hola " + msg;
+}
+
+console.log(sayHello("Raul"));
+```
+
+Para impedir que todas las variables queden en el objeto global (window), suele ser muy utilizado el hecho de generar una funcion anónima autoinvocada, que no es más que una 
+arroy function encerrada entre paréntesis y con paréntesis al final
+
+```typescript
+(() => {})();
+```
+
+Ejemplo:
+
+```typescript
+(() => {
+
+    const a: number = 10;
+    console.log(a);
+
+})();
+```
+
+De esta manera yo puedo crear varios archivo en mi proyecto y éstos no caen en el objeto global window

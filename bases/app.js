@@ -9,11 +9,10 @@
     const villano = ['Lex Lutor', 5, true];
     // Arreglos
     const aliados = ['Mujer Maravilla', 'Acuaman', 'San', 'Flash'];
-    //Enumeraciones
-    const fuerzaFlash = 5;
-    const fuerzaSuperman = 100;
-    const fuerzaBatman = 1;
-    const fuerzaAcuaman = 0;
+    const fuerzaFlash = 25 /* NivelPoder.flashPower */;
+    const fuerzaSuperman = 100 /* NivelPoder.supermanPower */;
+    const fuerzaBatman = 10 /* NivelPoder.batmanPower */;
+    const fuerzaAcuaman = 80 /* NivelPoder.aquamanPower */;
     // Retorno de funciones
     function activar_batiseñal() {
         return 'activada';

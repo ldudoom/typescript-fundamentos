@@ -6,6 +6,13 @@
         max = 10
     }
 
+    enum enumeracion {
+        a = 10,
+        b,
+        c = 9,
+        d
+    }
+
     let currentAudio = AudioLevel.max;
 
     console.log(currentAudio);

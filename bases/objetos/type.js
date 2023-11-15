@@ -22,3 +22,4 @@
         },
     };
 })();
+//# sourceMappingURL=type.js.map

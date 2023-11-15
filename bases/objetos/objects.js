@@ -19,3 +19,4 @@
         powers: ['Super velocidad', 'Super fuerza']
     };
 })();
+//# sourceMappingURL=objects.js.map

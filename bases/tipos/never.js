@@ -12,3 +12,4 @@
     error('Funcion never');
     console.log('Hello world');
 })();
+//# sourceMappingURL=never.js.map

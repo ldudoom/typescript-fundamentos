@@ -133,3 +133,30 @@ Ejemplo:
 ```
 
 De esta manera yo puedo crear varios archivo en mi proyecto y éstos no caen en el objeto global window
+
+## Depuracion de Codigo
+
+En el caso de que yo necesite que la depuración de código esté activada, pero que se me indique que el error se encuentra en x linea del archivo ts, 
+obviamente no necesito que me de el error en la linea del archivo js porque no estoy trabajando con ese archivo. Para eso hacemos lo siguiente en el 
+archivo ***tsconfig.json***
+
+Descomentamos esta línea y nos aseguramos que esté en **true**
+```json
+    "sourceMap": true,
+```
+
+Ahora, vayamos a ejecutar el comando que transpila nuestro código typescript a Javascript, vamos a ver que se genera un 3er archivo por cada uno de 
+nuestros .ts, con la extension **.js.map**
+
+## Remover comentarios de archivos JS
+
+Si tenemos comentarios en nuestro codigo en los archivos .ts, estos se pasarán al archivo .js al momento de compilar. 
+
+Para avitar esto debemos hacer lo siguiente.
+
+
+Descomentamos esta línea y nos aseguramos que esté en **true**
+```json
+    "removeComments": true,
+```
+

@@ -180,3 +180,25 @@ las siguientes lineas al final del archivo tsconfig.json:
   ]
 }
 ```
+
+
+## outFile - Archivo de salida
+
+Vamos a generar un único archivo de salida para no tener que incluir todos nuestros archivos .ts en el index.html
+
+Lo que vamos a hacer es descomentar las siguientes líneas del archivo **tsconfig.json** y configurar las rutas, 
+tanto del directorio de salida como el nombre del archivo de salida
+
+```json
+    "module": "amd",
+    "outFile": "./myapp.js",
+    "outDir": "./",
+```
+
+Eliminamos el parametro ***include***
+
+```json 
+  "include": [
+    "node_modules3/*.ts"
+  ]
+```

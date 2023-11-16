@@ -160,3 +160,23 @@ Descomentamos esta línea y nos aseguramos que esté en **true**
     "removeComments": true,
 ```
 
+## Incluir y excluir directorios y/o archivos
+
+En caso de que queramos excluir o incluir paths de directorios o archivos en la compilación de nuestro proyecto, tendremos que agregar
+las siguientes lineas al final del archivo tsconfig.json:
+
+```json
+{
+  "compilerOptions": {
+    ...                               /* Skip type checking all .d.ts files. */
+  },
+  "exclude": [
+    "node_modules2/*.ts"
+    ...
+  ],
+  "include": [
+    "node_modules3/*.ts"
+    ...
+  ]
+}
+```

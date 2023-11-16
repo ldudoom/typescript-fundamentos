@@ -6,6 +6,9 @@
         // private team: string;
         // public realName?: string;
         static avgAge: number = 35;
+        static getAvgAge() {
+            return Avenger.avgAge;
+        }
 
         // constructor(name:string, team: string, realName?: string){
         //     this.name = name;
@@ -23,6 +26,10 @@
             Avenger.avgAge = avgAge;
         }
 
+        public bio() {
+            return `${this.name} (${this.team})`;
+        }
+
 
 
     }
@@ -31,5 +38,7 @@
 
     console.log(antman);
     console.log(Avenger.avgAge);
+
+    console.log(antman.bio());
 
 })();

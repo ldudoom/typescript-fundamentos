@@ -1,33 +1,15 @@
 "use strict";
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
+(() => {
+    class Avenger {
+        constructor(name, team, realName) {
+            this.name = name;
+            this.team = team;
+            this.realName = realName;
         }
-    return t;
-};
-(() => {
-    const avengers = {
-        nick: 'Samuel L. Jackson',
-        ironman: 'Robert Downey Jr.',
-        vision: 'Paul Betany',
-        activo: true,
-        poder: 1500.1234567
-    };
-    const printAvenger = (_a) => {
-        var { ironman } = _a, resto = __rest(_a, ["ironman"]);
-        console.log(ironman, resto);
-    };
-    printAvenger(avengers);
-})();
-(() => {
-    const nombre = 'Raúl Alejandro';
-    const getName = () => {
-        console.log('viejo getName');
-    };
+    }
+    Avenger.avgAge = 35;
+    const antman = new Avenger('Antman', 'Team Capi');
+    console.log(antman);
+    console.log(Avenger.avgAge);
 })();
 //# sourceMappingURL=myapp.js.map

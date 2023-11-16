@@ -1,5 +1,6 @@
 (() => {
 
+    // Destructuracion de Objetos
     type Avengers = {
         nick: string;
         ironman: string;
@@ -23,6 +24,12 @@
         console.log( ironman, resto );
     }
 
-    printAvenger(avengers);
+    //printAvenger(avengers);
+
+
+    // Destructuracion de Arreglos
+    const avengersArr: string[] = ['Cap. America', 'Ironman', 'Hulk'];
+    const [capi,ironman,] = avengersArr;
+    //console.log({ironman, capi});
 
 })();

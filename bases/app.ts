@@ -1,43 +1,84 @@
-(() => {
+// Crear interfaces
 
-    // Tipos
-    const batman: string = 'Bruce';
-    const superman: string = 'Clark';
-  
-    const existe: boolean = false;
-  
-    // Tuplas
-    const parejaHeroes: [string, string] = [batman,superman];
-    const villano: [string, number, boolean] = ['Lex Lutor',5,true];
-  
-    // Arreglos
-    const aliados: string[] = ['Mujer Maravilla','Acuaman','San', 'Flash'];
-  
-    //Enumeraciones
-    const enum NivelPoder {
-        aquamanPower = 80,
-        batmanPower = 10,
-        supermanPower = 100,
-        flashPower = 25
-    }
-    const fuerzaFlash: NivelPoder = NivelPoder.flashPower;
-    const fuerzaSuperman: NivelPoder = NivelPoder.supermanPower;
-    const fuerzaBatman: NivelPoder = NivelPoder.batmanPower;
-    const fuerzaAcuaman: NivelPoder = NivelPoder.aquamanPower;
-  
-    // Retorno de funciones
-    function activar_batiseñal(): string{
-      return 'activada';
-    }
-  
-    function pedir_ayuda(): void{
-      console.log('Auxilio!!!');
-    }
-  
-    // Aserciones de Tipo
-    const poder: any = '100';
-    const largoDelPoder:number = (poder as string).length;
-    console.log( largoDelPoder );
-  
-  
-  })();
+interface Auto {
+  encender: boolean;
+  velocidadMaxima: number;
+  acelerar(): void;
+}
+
+// Cree una interfaz para validar el auto (el valor enviado por parametro)
+const conducirBatimovil = ( auto: Auto ):void => {
+  auto.encender = true;
+  auto.velocidadMaxima = 100;
+  auto.acelerar();
+}
+
+const batimovil: Auto = {
+  encender:false,
+  velocidadMaxima:0,
+  acelerar(){
+    console.log("...... gogogo!!!");
+  }
+}
+
+// Cree una interfaz con que permita utilzar el siguiente objeto
+// utilizando propiedades opcionales
+
+interface Joker {
+  reir?: boolean;
+  comer?: boolean;
+  llorar?: boolean;
+}
+
+const guason: Joker = {
+  reir: true,
+  comer:true,
+  llorar:false
+}
+
+const reir = ( guason: Joker ):void => {
+  if( guason.reir ){
+    console.log("JAJAJAJA");
+  }
+}
+
+
+// Cree una interfaz para la siguiente funcion
+
+interface GothamCity {
+  (ciudadanos: string[]): number;
+}
+
+const ciudadGotica: GothamCity = ( ciudadanos:string[] ):number => {
+  return ciudadanos.length;
+}
+
+// Cree una interfaz que obligue crear una clase
+// con las siguientes propiedades y metodos
+
+/*
+  propiedades:
+    - nombre
+    - edad
+    - sexo
+    - estadoCivil
+    - imprimirBio(): void // en consola una breve descripcion.
+*/
+
+interface Person {
+  nombre: string;
+  edad: number;
+  sexo: string;
+  estadoCivil: boolean;
+  imprimirBio(): void;
+}
+
+class Persona implements Person {
+  nombre: string;
+  edad: number;
+  sexo: string;
+  estadoCivil: boolean;
+  imprimirBio(): void {
+    throw new Error("Method not implemented.");
+  }
+}

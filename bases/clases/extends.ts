@@ -2,8 +2,8 @@
 
     class Avenger {
         constructor(
-            private name: string,
-            private realName: string
+            protected name: string,
+            protected realName: string
         ) {
             console.log('Constructor Avenger llamado !!!');
         }
@@ -23,6 +23,17 @@
             console.log('Constructor Xmen llamado !!!');
         }
 
+        get fullName() {
+            return `${this.name} - ${this.realName}`;
+        }
+
+        set fullName(name: string) {
+            if( name.length < 3) {
+                throw new Error('El nombre debe tener al menos 3 caracteres');
+            }
+            this.name = name;
+        }
+
         getFullNameDesdeXmen() {
             console.log( super.getFullName() );    
         }
@@ -31,6 +42,9 @@
     const wolverine = new Xmen('Wolverine', 'Logan', true);
 
     console.log(wolverine);
-    wolverine.getFullNameDesdeXmen();
+    console.log(wolverine.fullName);
+    wolverine.fullName = 'Raul';
+    console.log(wolverine.fullName);
+    // wolverine.getFullNameDesdeXmen();
 
 })();

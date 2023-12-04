@@ -25,7 +25,7 @@
     // console.log(magneto.conquistarMundo());
 
     const printName = (character: Mutante) => {
-        console.log(character.name);
+        // console.log(character.name);
     }
 
     printName(wolverine);

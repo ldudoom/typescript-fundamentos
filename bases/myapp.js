@@ -24,6 +24,18 @@
     };
 })();
 (() => {
+    class Mutant {
+        constructor(name, realName, age) {
+            this.name = name;
+            this.realName = realName;
+            this.age = age;
+        }
+        mutantPower(id) {
+            return `${id} => ${this.name} - ${this.realName}`;
+        }
+    }
+})();
+(() => {
     const client = {
         name: 'Raul',
         age: 42,
@@ -32,7 +44,7 @@
             zip: 'KY2 SUD',
             city: 'Ottawa'
         },
-        getFullAddress() {
+        getFullAddress(id) {
             return this.address.zip;
         }
     };
@@ -44,7 +56,7 @@
             zip: 'K2S U2A',
             city: 'Toronto'
         },
-        getFullAddress() {
+        getFullAddress(id) {
             return this.address.zip;
         }
     };

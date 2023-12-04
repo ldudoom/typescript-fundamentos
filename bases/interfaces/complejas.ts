@@ -21,7 +21,7 @@
             zip: 'KY2 SUD',
             city: 'Ottawa'
         },
-        getFullAddress(): string {
+        getFullAddress(id: string): string {
             return this.address.zip;
         }
     }
@@ -34,7 +34,7 @@
             zip: 'K2S U2A',
             city: 'Toronto'
         },
-        getFullAddress(): string {
+        getFullAddress(id: string): string {
             return this.address.zip;
         }
     }

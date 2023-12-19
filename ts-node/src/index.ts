@@ -1,11 +1,28 @@
-import { Hero } from './classes/Hero';
-//import { Hero as SuperHero, Hero2, Hero } from './classes/Hero';
-//import * as HeroClasses from "./classes/Hero";
-// Cuando se realiza la exportacion por defecto ya no se deben colocar llaves
-//import powers from "./data/powers";
+import { printObject, genericFunction, genericFunctionArrow } from './generics/generics';
+import { Villian, Hero } from './interfaces';
 
-//const ironman = new SuperHero('Ironman', 1, 55);
-const ironman = new Hero( 'Ironman', 1, 55 );
-console.log( ironman );
-console.log( ironman );
 
+
+// printObject(123);
+// printObject( new Date() );
+// printObject( { a:1, b:2, c:3 } );
+// printObject( [1,2,3,4,5,6,7,8,9,10] );
+// printObject( 'Hola Mundo !!!' );
+
+// const name: string = 'Raul';
+
+// console.log( genericFunction(3.14161821).toFixed(2) );
+// console.log( genericFunction( name ).toUpperCase() );
+// console.log( genericFunction( new Date() ).getDate() );
+
+// console.log( genericFUnctionArrow(3.14161821).toFixed(2) );
+// console.log( genericFUnctionArrow( name ).toUpperCase() );
+// console.log( genericFUnctionArrow( new Date() ).getDate() );
+
+const deadpool = {
+    name: 'Deadpool',
+    realName: 'Wade Winston Wilson',
+    dangerLevel: 130
+}
+
+console.log( genericFunctionArrow<Villian>(deadpool).dangerLevel );

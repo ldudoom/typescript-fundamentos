@@ -1,5 +1,5 @@
-import { printObject, genericFunction, genericFunctionArrow } from './generics/generics';
-import { Villian, Hero } from './interfaces';
+import { printObject, genericFunction, genericFunctionArrow } from '../generics/generics';
+import { Villian, Hero } from '../interfaces';
 
 
 

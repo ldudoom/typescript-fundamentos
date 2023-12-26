@@ -4,6 +4,7 @@ const charmander = new Pokemon('Charmander');
 
 // (Pokemon.prototype as any).customName = 'Pikachu';
 
-// console.log(charmander);
+charmander.publicApi = 'https://buhoo.ec';
+console.log(charmander);
 
-charmander.savePokemonToDB(500);
+// charmander.savePokemonToDB(500);

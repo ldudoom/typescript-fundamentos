@@ -33,14 +33,39 @@ function CheckValidPokemonId() {
     }
 }
 
+// Decorador de propiedades (bloquear la propiedad publicApi para que nadie la pueda cambiar)
+function ReadOnly( isWritable: boolean = true): Function {
+    return function( target: any, propertyKey: string){
+        const descriptor: PropertyDescriptor = {
+            get() {
+                console.log( this );
+                return 'Raul';
+            },
+            set(this, val) {
+                // console.log(this, value);
+                Object.defineProperty( this, propertyKey, {
+                    value: val,
+                    writable: !isWritable,
+                    enumerable: false
+                });
+            }
+        }
+
+        return descriptor;
+    }
+}
+
 
 
 
 @bloquearPrototipo
 @printToConsoleConditional( false )
 export class Pokemon {
-
+    
+    // @ReadOnly( false )
+    @ReadOnly()
     public publicApi: string = 'https://pokeapi.co';
+
     constructor(
         public name: string
     ){}
